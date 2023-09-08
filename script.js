@@ -1,4 +1,4 @@
-let playerSelection;
+let playerSelection = "null";
 let computerSelection;
 let computerScore = 0;
 let playerScore = 0;
@@ -6,7 +6,7 @@ let playerScore = 0;
 function getComputerSelection() {
     const choice = Math.floor(Math.random() * 3);
     computerSelection = (choice == 0) ? "rock" : (choice == 1) ? "paper" : "scissor";
-    console.log("computer : " + computerSelection);
+    console.log("computer: " + computerSelection);
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -26,11 +26,12 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     for(i = 1; i <= 5; i++){
-        playerSelection = prompt("choose rock, paper, scissor?", "").toLowerCase();
+        playerSelection = String(prompt("choose rock, paper, scissor?", "")).toLowerCase();
         while(!(playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissor")) {
             alert('Please choose \"rock\", \"paper\", or \"scissor\"! ');
-            playerSelection = prompt("choose rock, paper, scissor?", "").toLowerCase();
+            playerSelection = String(prompt("choose rock, paper, scissor?", "")).toLowerCase();
         }
+        console.log("You: " + playerSelection);
         getComputerSelection();
         playRound(playerSelection, computerSelection);
     }
