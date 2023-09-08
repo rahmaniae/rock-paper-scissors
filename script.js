@@ -23,3 +23,17 @@ function playRound(playerSelection, computerSelection) {
         playerScore++;
     }
 }
+
+function game() {
+    for(i = 1; i <= 5; i++){
+        playerSelection = prompt("choose rock, paper, scissor?", "").toLowerCase();
+        while(!(playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissor")) {
+            alert('Please choose \"rock\", \"paper\", or \"scissor\"! ');
+            playerSelection = prompt("choose rock, paper, scissor?", "").toLowerCase();
+        }
+        getComputerSelection();
+        playRound(playerSelection, computerSelection);
+    }
+    return (playerScore < computerScore) ? "You lost the game" : (playerScore === computerScore) ? "Draw ! " : "You won the game! " + playerScore + " vs " + computerScore;
+
+}
