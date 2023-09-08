@@ -25,7 +25,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    for(i = 1; i <= 5; i++){
+    for(round = 1; round <= 5; round++){
         playerSelection = String(prompt("choose rock, paper, scissor?", "")).toLowerCase();
         while(!(playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissor")) {
             alert('Please choose \"rock\", \"paper\", or \"scissor\"! ');
